@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "AdminLay";
+}
+@model IEnumerable< ExamenFlores3.Areas.Admin.Models.FlorModel>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+                <a class="btn" href="~/Admin/Home/Agregar">
+                    Agregar flor
+                </a>
+
+                <div class="entrada">
+
+                    <table id="tablaFlores" style="width: 100%;">
+                        <tr style="background: pink;">
+
+                            <th>Flor</th>
+                            <th style="width:40%">Acción</th>
+                        </tr>
+                            @foreach (var item in Model)
+                             {
+                        <tr>
+                                <td>
+                                    <img src="~/images/@(item.Id).jpg" />
+                                    @item.Nombre
+                                </td>
+                                <td>
+                                    <a href="editar.html">Editar</a>
+                                    <a href="eliminar.html">Eliminar</a>
+                                </td>
+                        </tr>
+                             }
+                    </table>
+                </div>

@@ -1,0 +1,73 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ExamenFlores3.Areas.Admin.Models.ViewModel.IndexAdmin
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<html>
+<head>
+    <title>
+        Petalos y Flores
+    </title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="main">
+        <div id="top">
+            <div id="logo">
+                <h1>
+                    <a href="Default.aspx">Pétalos Y Flores</a>
+                </h1>
+                <p>
+                    Programación Web
+                </p>
+            </div>
+            <div id="divisor">
+            </div>
+        </div>
+        <div id="center">
+            <div id="content2">
+                <h2 class="titulo">LISTA DE FLORES</h2>
+                <a class="btn" href="agregar.html">
+                    Agregar flor
+                </a>
+
+                <div class="entrada">
+
+                    <table id="tablaFlores" style="width: 100%;">
+                        <tr style="background: pink;">
+
+                            <th>Flor</th>
+                            <th style="width:40%">Acción</th>
+                        </tr>
+                        <tr>
+                            @foreach (var item in Model.FlorM)
+                            {
+                                <td>
+                                    <img src="~/images/@(item.Id).jpg" />
+                                    @item.Nombre
+                                </td>
+                                <td>
+                                    <a href="editar.html">Editar</a>
+                                    <a href="eliminar.html">Eliminar</a>
+                                </td>
+                            }
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+    </div>
+    </div>
+    <div id="footer">
+        <p>
+            Examen de Segunda Oportunidad U3
+        </p>
+    </div>
+
+</body>
+</html>
